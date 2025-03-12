@@ -105,7 +105,6 @@ void main(){
   myList.removeLast();
   print(myList);
   }
-  >>>>>>> a7e6b769ba64500595aa56cbaa413ffe7f71cc7b
 
 
 
