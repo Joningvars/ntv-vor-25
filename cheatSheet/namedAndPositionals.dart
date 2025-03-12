@@ -1,5 +1,6 @@
-import 'dart:io';  // Import for reading user input
-import 'functions.dart'; // Assuming functions.dart contains other functions
+import 'dart:io';
+
+import 'functions.dart'; // importum þessum functions sem við gerðum
 
 void main() {
   // Print name and job
