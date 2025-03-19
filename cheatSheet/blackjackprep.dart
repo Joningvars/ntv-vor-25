@@ -54,10 +54,18 @@ void main(){
   //
   Person jon = Person("Jon", 45, "Kennari");
   jon.greeting();
-  jon.birthday();
-  jon.quitJob();
-  jon.greeting();
 
+  Cake jonsCake = Cake(jon.birthday(), jon.name);
+  jonsCake.printHowManyCandles();
+
+  Card tenOfClubs = Card('10', 'clubs');
+
+  // print(tenOfClubs.toString());
+
+  Player jonny = Player("jon", []);
+  jonny.addCard(tenOfClubs);
+  jonny.addCard(tenOfClubs);
+  jonny.printHand();
 }
 
 // ** VERKEFNI **
@@ -65,6 +73,17 @@ void main(){
 // Person er með nafn, aldur, starf
 // Búum til method/aðferð sem: prentar út greeting/hello my name is... - Afmæli ár bætist við á aldurinn og prentar-
 // svo út nýja aldurinn - Segja upp. Prentar út uppsögn eða bara ég hætti í $job takk fyrir mig.
+
+class Cake {
+  String name;
+  int candles;
+
+  Cake(this.candles, this.name);
+
+  void printHowManyCandles(){
+    print("This is a cake for $name HAPPY BIRTHDAY! The cake has $candles candles!.");
+  }
+}
 
 class Person {
   String name;
@@ -79,9 +98,10 @@ void greeting(){
 }
 
   // Birthday
-void birthday(){
+int birthday(){
   age++;
   print("Yayy its my brithday oh yes its my birthday today i am $age years of age!!");
+  return age++;
 }
 
 
@@ -91,6 +111,50 @@ void quitJob(){
   print("I quit!! my job title is now $job!");
 }
 
+void ageAfter10Years(){
+  print("After 10 years i will be ${age + 10} years old!");
+}
+
+
+}
+
+
+class Card {
+  String suit;
+  String rank;
+
+  Card(this.rank, this.suit);
+
+  int value(){
+    if(['J', 'K', 'Q'].contains(rank)){
+      return 10;
+    }
+    if(rank == 'A'){
+      return 11;
+    }
+    return int.parse(rank);
+  }
+
+  String toString() {
+    return '$rank of $suit';
+  }
+}
+
+class Player {
+  String name;
+  List<Card> hand;
+
+  Player(this.name, this.hand);
+
+  void addCard(Card card){
+    hand.add(card);
+  }
+
+  void printHand(){
+    for(Card card in hand){
+      print(card);
+    }
+  }
 }
 
 
