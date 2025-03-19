@@ -42,23 +42,55 @@ void main(){
   //búum til objectinn Car
   Car volvoXC90 = Car("Volvo", "XC90", 140);
 
-  volvoXC90.drive();
-  volvoXC90.brake();
+  // volvoXC90.drive();
+  // volvoXC90.brake();
 
   // Við getum notað classinn/blueprintið til að
   // búa til eins mara objects og við viljum.
 
   Car avensis = Car("Toyota", "Avensis", 65);
-  avensis.drive();
-  avensis.brake();
+  // avensis.drive();
+  // avensis.brake();
+  //
+  Person jon = Person("Jon", 45, "Kennari");
+  jon.greeting();
+  jon.birthday();
+  jon.quitJob();
+  jon.greeting();
 
 }
 
 // ** VERKEFNI **
 // Búa til class sem heitir Person
 // Person er með nafn, aldur, starf
-// Búum til method/aðferð sem: prentar út nafnið - Afmæli ár bætist við á aldurinn og prentar-
+// Búum til method/aðferð sem: prentar út greeting/hello my name is... - Afmæli ár bætist við á aldurinn og prentar-
 // svo út nýja aldurinn - Segja upp. Prentar út uppsögn eða bara ég hætti í $job takk fyrir mig.
 
+class Person {
+  String name;
+  int age;
+  String job;
+
+  Person(this.name,this.age,this.job);
+
+  // Greeting
+void greeting(){
+  print("Hi, my name is $name and i am $age years old. I am currently employed as $job");
+}
+
+  // Birthday
+void birthday(){
+  age++;
+  print("Yayy its my brithday oh yes its my birthday today i am $age years of age!!");
+}
+
+
+  // Quit job
+void quitJob(){
+  job = "atvinnulaus!";
+  print("I quit!! my job title is now $job!");
+}
+
+}
 
 
