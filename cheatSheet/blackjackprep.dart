@@ -15,6 +15,8 @@
 
 // DÆMI: Car class
 
+import 'dart:io';
+
 class Car {
   // eiginleikar
   String brand;
@@ -156,5 +158,59 @@ class Player {
     }
   }
 }
+
+// TÍMAVERKEFNI
+
+// ** REIKNIVÉL **
+// Prompta user - Biðja um 2 tölur og lista af aðgerðum t.d [ + - / * ]
+// Þið ráðið hvort þið biðjið um tölurnar í sitthvoru lagi eða báðar í einu.
+// s.s annaðhvort tvö input eða inline skrifa þá t.d '1+1' eða '1/1' eða '1*1'
+// nota bara function, if else,  while loop
+
+//biðjum um tölur
+String? num1 = stdin.readLineSync();
+String? num2 = stdin.readLineSync();
+String? input = stdin.readLineSync();
+
+// print('1. +')
+// print('2. -')
+// print('3. *')
+// print('4. /')
+//
+// if(input == '1'){
+//   return input + input2;
+// }
+//
+// if(input.contains('+')){
+//   List nums =  input!.split('+');
+//   int num1 = double.parse(nums[0]);
+//   int num2 = int.parse(nums[1]);
+//   return num1 + num2;
+// } else if(input.contains('-')){
+//   blabla
+// }
+//
+
+// int operatorIndex = findOperatorIndex(input!);
+//
+//
+// switch(input[operatorIndex]){
+//   case: '+'
+//     return num1 + num2
+//   case: '-'
+//     return num1 - num2
+// }
+//
+// int findOperatorIndex(String input){
+//   for(int i = 0; i < input.length; i++) {
+//     if (input[i] == '+' || input[i] == '-' || input == '/' || input == '*') {
+//       return i;
+//     }
+//   }
+//     return -1;
+//   }
+
+
+
 
 
