@@ -1,53 +1,9 @@
 import 'dart:io';
 
 void main() {
-  print('Simple Calculator in Dart');
-  print('Enter an operation (e.g., 2+3) or type "exit" to quit:');
-
-  while (true) {
-    String? input = stdin.readLineSync();
-
-    // Ef user skrifar 'exit' þá hættir forritið
-    if (input == null || input.toLowerCase() == 'exit') {
-      print('Exiting Calculator...');
-      break;
+  for (int i = 1; i <= 5; i++) {  // Ytri lykkja: hversu mörg lög
+    for (int j = 1; j <= i; j++) {  // Innri lykkja: hversu margar stjörnur á hverju lagi
+      print('*\n');  // Prenta stjörnu á sama línu
     }
-
-    // Ef input inniheldur '+' þá nota + functionality
-    if (input.contains('+')) {
-      var numbers = input.split('+');
-      double num1 = double.parse(numbers[0]);
-      double num2 = double.parse(numbers[1]);
-      print('Result: ${num1 + num2}');
-    }
-    // Ef input inniheldur '-' þá nota - functionality
-    else if (input.contains('-')) {
-      var numbers = input.split('-');
-      double num1 = double.parse(numbers[0]);
-      double num2 = double.parse(numbers[1]);
-      print('Result: ${num1 - num2}');
-    }
-    // // Ef input inniheldur '*' þá nota * functionality
-    else if (input.contains('*')) {
-      var numbers = input.split('*');
-      double num1 = double.parse(numbers[0]);
-      double num2 = double.parse(numbers[1]);
-      print('Result: ${num1 * num2}');
-    }
-    else if (input.contains('/')) {
-      var numbers = input.split('/');
-      double num1 = double.parse(numbers[0]);
-      double num2 = double.parse(numbers[1]);
-      if (num2 == 0) {
-        print('Error: Cannot divide by zero');
-      } else {
-        print('Result: ${num1 / num2}');
-      }
-    }
-    else {
-      print('Invalid input. Please enter a valid operation (e.g., 2+3).');
-    }
-
-    print('Enter another operation or type "exit" to quit:');
   }
 }
